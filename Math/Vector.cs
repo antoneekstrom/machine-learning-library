@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MLMath;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,7 +13,7 @@ namespace MLMath
         /// <summary>
         /// The values of the vector.
         /// </summary>
-        public float[] Values { get; protected set; }
+        public float[] Values { get; set; }
 
         /// <summary>
         /// The size/length of the vector.

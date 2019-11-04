@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MLMath;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -89,7 +90,7 @@ namespace MLMath
 
         public static float[] Add(float[] a, float[] b)
         {
-            ElementWiseOperation add = (_a, _b) => _a + _b; 
+            ElementWiseOperation add = (_a, _b) => _a + _b;
             return ElementWiseOperation(a, b, add);
         }
 

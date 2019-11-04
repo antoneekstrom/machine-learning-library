@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MLMath;
+using System;
 using System.Text;
 
 namespace MLMath
@@ -122,7 +123,7 @@ namespace MLMath
             Random random = new Random();
             Operation randomValue = z => {
                 double v = (float)random.NextDouble() * multiplier;
-                if (round) v = Math.Round(v);
+                if (round) v = System.Math.Round(v);
                 return (float)v;
             };
             return Map(randomValue);

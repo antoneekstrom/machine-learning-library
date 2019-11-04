@@ -33,7 +33,7 @@ namespace MLMath
         /// <returns>the result</returns>
         public static float Sigmoid(float x)
         {
-            return 1 / (1 + (float)Math.Exp(-x));
+            return 1 / (1 + (float)System.Math.Exp(-x));
         }
 
         /// <summary>

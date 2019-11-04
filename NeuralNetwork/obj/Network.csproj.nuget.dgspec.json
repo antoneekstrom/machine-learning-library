@@ -1,0 +1,116 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\Network.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\MLMath.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\MLMath.csproj",
+        "projectName": "MLMath",
+        "projectPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\MLMath.csproj",
+        "packagesPath": "C:\\Users\\01aner98\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\01aner98\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\Network.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\Network.csproj",
+        "projectName": "Network",
+        "projectPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\Network.csproj",
+        "packagesPath": "C:\\Users\\01aner98\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\01aner98\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\MLMath.csproj": {
+                "projectPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\MLMath.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,14 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <ApplicationIcon />
     <StartupObject />
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Accord.DataSets" Version="3.8.0" />
+    <PackageReference Include="SharpZipLib" Version="1.2.0" />
+    <PackageReference Include="Zlib.Portable.Signed" Version="1.11.0" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Math\MLMath.csproj" />

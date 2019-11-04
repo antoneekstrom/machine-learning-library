@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Files\\c\\MachineLearning\\Math\\Math.csproj": {}
+    "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\Math.csproj": {}
   },
   "projects": {
-    "E:\\Files\\c\\MachineLearning\\Math\\Math.csproj": {
+    "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\Math.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Files\\c\\MachineLearning\\Math\\Math.csproj",
+        "projectUniqueName": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\Math.csproj",
         "projectName": "Math",
-        "projectPath": "E:\\Files\\c\\MachineLearning\\Math\\Math.csproj",
-        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "E:\\Files\\c\\MachineLearning\\Math\\obj\\",
+        "projectPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\Math.csproj",
+        "packagesPath": "C:\\Users\\01aner98\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\01aner98\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

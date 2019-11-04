@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using MLMath;
+using NeuralNetwork.Structure;
 
 namespace NeuralNetwork
 {
@@ -129,7 +130,7 @@ namespace NeuralNetwork
         /// 
         /// <para>
         /// Calculate the errors/losses of each layer (using <see cref="CalculateLoss(Vector)"/>)
-        /// and then adjust the weights accordingly (using <see cref="NNOperations.WeightDeltas(Layer, Layer, Vector, ActivationFunction, float)"/>).
+        /// and then adjust the weights accordingly (using <see cref="NNOperations.CalculateDeltas(Layer, Layer, Vector, ActivationFunction, float)"/>).
         /// </para>
         /// </summary>
         /// <param name="desiredOutput">the desired output value of the network</param>
@@ -145,11 +146,18 @@ namespace NeuralNetwork
                 LayerResult L1R = results[i];
                 LayerResult L0R = results[i - 1];
 
-                Matrix L0dw = NNOperations.WeightDeltas(L0R.Layer, L1R.Layer, L1R.Loss, Properties.DerivativeActivation, Properties.LearningRate);
-                Matrix nw = L0R.Layer.Weights + L0dw;
-                L0R.Layer.Weights.Values = nw.Values;
+                // Get the values to adjust weights and biases
+                Deltas L0deltas = NNOperations.CalculateDeltas(L0R.Layer, L1R.Layer, L1R.Loss, Properties.DerivativeActivation, Properties.LearningRate);
 
-                results[i -1].Delta = L0dw;
+                // create new adjusted weights and biases
+                Matrix nw = L0R.Layer.Weights + L0deltas.Weights;
+                Vector nb = L0R.Layer.Biases + L0deltas.Biases;
+
+                // Apply adjustments
+                L0R.Layer.Weights.Values = nw.Values;
+                L0R.Layer.Biases.Values = nb.Values;
+
+                results[i - 1].Deltas = L0deltas;
             }
 
             return results;

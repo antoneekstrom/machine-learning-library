@@ -4,6 +4,11 @@ using System.Text;
 using System.Diagnostics;
 
 using MLMath;
+using NeuralNetwork.IO;
+using NeuralNetwork.Structure;
+
+using Accord.DataSets;
+using Math = Accord.Math;
 
 namespace NeuralNetwork
 {
@@ -12,7 +17,7 @@ namespace NeuralNetwork
         public static void Main(String[] args)
         {
             Program program = new Program();
-            program.Run();
+            program.RunDigits();
         }
 
         public void TestMatrixMultiplication()
@@ -72,6 +77,18 @@ namespace NeuralNetwork
             }
         }
 
+        public void RunDigits()
+        {
+            MNIST mnist = new MNIST();
+            Math.Sparse<double> data = mnist.Training.Item1[0];
+            Vector v = new Vector(data.Length);
+            for (int i = 0; i < data.Length; i++)
+            {
+                v[i] = (float)data[i];
+            }
+            v.Print("data");
+        }
+
         struct TrainingPair
         {
             public Vector input;
@@ -89,7 +106,8 @@ namespace NeuralNetwork
             NeuralNetwork nn = new NeuralNetwork(NetworkProperties.Default, 2, 3, 1);
             nn.Initialize();
 
-            int trainingIterations = 50000;
+            Console.WriteLine("Enter number of training iterations:");
+            int trainingIterations = int.Parse(Console.ReadLine());
 
             TrainingPair[] trainingSet = new TrainingPair[]
             {
@@ -108,6 +126,31 @@ namespace NeuralNetwork
                 Console.WriteLine();
                 nn.Input.Nodes.Print("Input");
                 nn.Output.Nodes.Print("Output");
+            }
+
+            Console.WriteLine("Training Complete\n");
+
+            while (true)
+            {
+                Vector input = new Vector(2);
+
+                Console.WriteLine("Enter Input 1:");
+                float input1 = float.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Input 2:");
+                float input2 = float.Parse(Console.ReadLine());
+
+                input[0] = input1;
+                input[1] = input2;
+
+                input.Print("Input Vector");
+
+                nn.Input.Nodes = input;
+
+                nn.FeedForward();
+                nn.Output.Nodes.Print("Results");
+
+                Console.WriteLine("Exit? (y/n)");
+                if (Console.ReadLine() == "y") break;
             }
         }
     }

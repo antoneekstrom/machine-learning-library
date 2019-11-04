@@ -3,9 +3,22 @@ using System.Collections.Generic;
 using System.Text;
 
 using MLMath;
+using NeuralNetwork.Structure;
 
 namespace NeuralNetwork
 {
+
+    public struct Deltas
+    {
+        public Matrix Weights { get; set; }
+        public Vector Biases { get; set; }
+
+        public override string ToString()
+        {
+            return ((Weights != null) ? (Weights.ToString() + "\n") : "") + ((Biases != null) ? Biases.ToString() : "");
+        }
+    }
+
     /// <summary>
     /// Operations used by the <see cref="NeuralNetwork"/> class.
     /// </summary>
@@ -43,15 +56,21 @@ namespace NeuralNetwork
         /// <param name="daf">the (cool) derivative of the activation function</param>
         /// <param name="learningRate">the learning rate</param>
         /// <returns>the deltas for the weights</returns>
-        public static Matrix WeightDeltas(Layer L0, Layer L1, Vector loss, ActivationFunction daf, float learningRate)
+        public static Deltas CalculateDeltas(Layer L0, Layer L1, Vector loss, ActivationFunction daf, float learningRate)
         {
             //Vector da = L1.Nodes.Copy().Map(v => daf(v));
             Vector da = Vector.Map(L1.Nodes, v => daf(v)); // derivative of the values (a) of L1
             Matrix ld = Matrix.ElementWiseOperation(loss.ToMatrix(), da.ToMatrix(), Operations.Multiply); // L1 loss derivative
 
-            Matrix dw = ld * Matrix.Transpose(L0.Nodes.ToMatrix()) * learningRate;
+            Matrix db = ld * learningRate; // delta for biases
+            Matrix dw = ld * Matrix.Transpose(L0.Nodes.ToMatrix()) * learningRate; // delta for weights
 
-            return dw;
+            // Put them into an object
+            Deltas deltas = new Deltas();
+            deltas.Weights = dw;
+            deltas.Biases = new Vector(Matrix.Transpose(db).Values[0]);
+
+            return deltas;
         }
 
         /// <summary>
