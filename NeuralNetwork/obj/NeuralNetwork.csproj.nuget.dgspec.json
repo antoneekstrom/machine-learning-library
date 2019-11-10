@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj": {}
+    "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj": {}
   },
   "projects": {
-    "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\MLMath.csproj": {
+    "E:\\Files\\c\\machine-learning-library\\Datasets\\Datasets.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\MLMath.csproj",
-        "projectName": "MLMath",
-        "projectPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\MLMath.csproj",
-        "packagesPath": "C:\\Users\\01aner98\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\obj\\",
+        "projectUniqueName": "E:\\Files\\c\\machine-learning-library\\Datasets\\Datasets.csproj",
+        "projectName": "Datasets",
+        "projectPath": "E:\\Files\\c\\machine-learning-library\\Datasets\\Datasets.csproj",
+        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
+        "outputPath": "E:\\Files\\c\\machine-learning-library\\Datasets\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\01aner98\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,27 +49,91 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj": {
+    "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
-        "projectName": "NeuralNetwork",
-        "projectPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
-        "packagesPath": "C:\\Users\\01aner98\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\obj\\",
+        "projectUniqueName": "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj",
+        "projectName": "MLMath",
+        "projectPath": "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj",
+        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
+        "outputPath": "E:\\Files\\c\\machine-learning-library\\MLMath\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\01aner98\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
+        "projectName": "NeuralNetwork",
+        "projectPath": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
+        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
+        "outputPath": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,8 +146,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\MLMath.csproj": {
-                "projectPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Math\\MLMath.csproj"
+              "E:\\Files\\c\\machine-learning-library\\Datasets\\Datasets.csproj": {
+                "projectPath": "E:\\Files\\c\\machine-learning-library\\Datasets\\Datasets.csproj"
+              },
+              "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj": {
+                "projectPath": "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj"
               }
             }
           }
@@ -97,30 +164,24 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
-            "Accord.DataSets": {
-              "target": "Package",
-              "version": "[3.8.0, )"
-            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
-            },
-            "SharpZipLib": {
-              "target": "Package",
-              "version": "[1.2.0, )"
-            },
-            "Zlib.Portable.Signed": {
-              "target": "Package",
-              "version": "[1.11.0, )"
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

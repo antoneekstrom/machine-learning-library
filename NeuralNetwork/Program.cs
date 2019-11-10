@@ -4,11 +4,7 @@ using System.Text;
 using System.Diagnostics;
 
 using MLMath;
-using NeuralNetwork.IO;
 using NeuralNetwork.Structure;
-
-using Accord.DataSets;
-using Math = Accord.Math;
 
 namespace NeuralNetwork
 {
@@ -17,7 +13,7 @@ namespace NeuralNetwork
         public static void Main(String[] args)
         {
             Program program = new Program();
-            program.RunDigits();
+            MnistTester.Run();
         }
 
         public void TestMatrixMultiplication()
@@ -77,18 +73,6 @@ namespace NeuralNetwork
             }
         }
 
-        public void RunDigits()
-        {
-            MNIST mnist = new MNIST();
-            Math.Sparse<double> data = mnist.Training.Item1[0];
-            Vector v = new Vector(data.Length);
-            for (int i = 0; i < data.Length; i++)
-            {
-                v[i] = (float)data[i];
-            }
-            v.Print("data");
-        }
-
         struct TrainingPair
         {
             public Vector input;
@@ -117,6 +101,8 @@ namespace NeuralNetwork
                 new TrainingPair(new Vector(1, 1), new Vector(0f))
             };
 
+            Stopwatch time = Stopwatch.StartNew();
+
             for (int i = 0; i < trainingIterations; i++)
             {
                 Random r = new Random();
@@ -128,6 +114,9 @@ namespace NeuralNetwork
                 nn.Output.Nodes.Print("Output");
             }
 
+            long dt = time.ElapsedMilliseconds;
+
+            Console.WriteLine("Training Time: " + dt + "ms");
             Console.WriteLine("Training Complete\n");
 
             while (true)

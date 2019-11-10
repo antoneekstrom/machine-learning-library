@@ -207,26 +207,6 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
-      },
-      "Datasets/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "compile": {
-          "bin/placeholder/Datasets.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Datasets.dll": {}
-        }
-      },
-      "MLMath/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "compile": {
-          "bin/placeholder/MLMath.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MLMath.dll": {}
-        }
       }
     }
   },
@@ -698,22 +678,10 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
-    },
-    "Datasets/1.0.0": {
-      "type": "project",
-      "path": "../Datasets/Datasets.csproj",
-      "msbuildProject": "../Datasets/Datasets.csproj"
-    },
-    "MLMath/1.0.0": {
-      "type": "project",
-      "path": "../MLMath/MLMath.csproj",
-      "msbuildProject": "../MLMath/MLMath.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "Datasets >= 1.0.0",
-      "MLMath >= 1.0.0",
       "Microsoft.NETCore.App >= 2.2.0"
     ]
   },
@@ -724,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
-      "projectName": "NeuralNetwork",
-      "projectPath": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
+      "projectUniqueName": "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj",
+      "projectName": "MLMath",
+      "projectPath": "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj",
       "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-      "outputPath": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\obj\\",
+      "outputPath": "E:\\Files\\c\\machine-learning-library\\MLMath\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -746,14 +714,7 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {
-            "E:\\Files\\c\\machine-learning-library\\Datasets\\Datasets.csproj": {
-              "projectPath": "E:\\Files\\c\\machine-learning-library\\Datasets\\Datasets.csproj"
-            },
-            "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj": {
-              "projectPath": "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
