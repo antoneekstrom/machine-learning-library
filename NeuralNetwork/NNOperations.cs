@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 
 using MLMath;
-using NeuralNetwork.Structure;
 
 namespace NeuralNetwork
 {

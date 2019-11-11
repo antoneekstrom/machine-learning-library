@@ -20,6 +20,12 @@ namespace MLMath
     public delegate float Operation(float val);
 
     /// <summary>
+    /// A consumer of floating point values.
+    /// </summary>
+    /// <param name="val"></param>
+    public delegate void Consumer(float val);
+
+    /// <summary>
     /// 
     /// </summary>
     public static class Operations

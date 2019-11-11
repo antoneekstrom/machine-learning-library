@@ -18,7 +18,7 @@ namespace MLMath
         /// <summary>
         /// The size/length of the vector.
         /// </summary>
-        public int Size { get { return Values.Length; } }
+        public int Length { get { return Values.Length; } }
 
         // IIndexable
         public float this[int i]
@@ -69,6 +69,18 @@ namespace MLMath
         public static Vector Map(Vector v, Operation f)
         {
             return v.Copy().Map(f);
+        }
+
+        /// <summary>
+        /// Consume every value of this vector.
+        /// </summary>
+        /// <param name="consumer"></param>
+        public void ForEach(Consumer consumer)
+        {
+            foreach (float val in Values)
+            {
+                consumer(val);
+            }
         }
 
         /// <summary>
@@ -146,13 +158,13 @@ namespace MLMath
         {
             StringBuilder b = new StringBuilder();
 
-            b.Append("Vector (Size: " + Size + ")" + (message.Length > 0 ? " - " : "") + message + "\n");
+            b.Append("Vector (Size: " + Length + ")" + (message.Length > 0 ? " - " : "") + message + "\n");
 
             b.Append("[");
-            for (int i = 0; i < Size; i++)
+            for (int i = 0; i < Length; i++)
             {
                 b.Append(this[i]);
-                if (i + 1 != Size) b.Append(", ");
+                if (i + 1 != Length) b.Append(", ");
             }
             b.Append("]\n");
 

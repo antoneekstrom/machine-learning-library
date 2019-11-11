@@ -4,7 +4,7 @@ using System.Text;
 
 using MLMath;
 
-namespace NeuralNetwork.Structure
+namespace NeuralNetwork
 {
     public class Layer
     {
@@ -14,11 +14,6 @@ namespace NeuralNetwork.Structure
         /// The size of the layer.
         /// </summary>
         public int Size { get; private set; }
-
-        /// <summary>
-        /// The values of the nodes in the layer.
-        /// </summary>
-        public Vector Nodes { get; set; }
 
         /// <summary>
         /// The biases for each node of the NEXT layer.
@@ -41,6 +36,24 @@ namespace NeuralNetwork.Structure
         /// 
         /// </summary>
         public string Name { get; private set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private Vector _nodes;
+
+        /// <summary>
+        /// The values of the nodes in the layer.
+        /// </summary>
+        public Vector Nodes
+        {
+            get { return _nodes; }
+            set
+            {
+                if (value.Length != Size) throw new Exception("Node vector length must match size of layer.");
+                _nodes = value;
+            }
+        }
 
         /// <summary>
         /// Create a layer with a given size.

@@ -1,52 +1,103 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
+using System.Diagnostics;
 
 using Datasets.MNIST;
 using MLMath;
 
 namespace NeuralNetwork.Programs
 {
-    class DigitRecognition
+    public class DigitRecognition
     {
-        public void Run()
+
+        MnistDataset trainingSet, testingSet;
+        NeuralNetwork nn;
+
+        void Init()
         {
-            string imagesPath = "mnist/train-images.idx3-ubyte";
-            string labelsPath = "mnist/train-labels.idx1-ubyte";
-            MnistDataset dataset = MnistReader.LoadDataset(imagesPath, labelsPath);
+            string trainingImages = "mnist/train-images.idx3-ubyte";
+            string trainingLabels = "mnist/train-labels.idx1-ubyte";
 
-            int inputSize = dataset.Data[0].Size;
+            string testingImages = "mnist/t10k-images.idx3-ubyte";
+            string testingLabels = "mnist/t10k-labels.idx1-ubyte";
 
-            NeuralNetwork nn = new NeuralNetwork(
+            trainingSet = MnistReader.LoadDataset(trainingImages, trainingLabels);
+            testingSet = MnistReader.LoadDataset(testingImages, testingLabels);
+
+            Image imgSpecimen = trainingSet.Data[0];
+            int inputSize = imgSpecimen.Size;
+
+            nn = new NeuralNetwork(
                 NetworkProperties.Default,
                 inputSize,
-                inputSize / 2,
-                inputSize / 3,
-                inputSize / 2,
+                25,
+                25,
                 10
             );
 
-            for (int i = 0; i < 10000; i++)
+            nn.Initialize();
+        }
+
+        void Train()
+        {
+            Stopwatch t = new Stopwatch();
+            t.Start();
+
+            for (int i = 0; i < trainingSet.Size; i++)
             {
-                Image image = dataset.Data[i];
-                uint label = dataset.Labels[i];
+                Image image = trainingSet.Data[i];
+                uint label = trainingSet.Labels[i];
 
-                Vector lv = Vector.Create(10, 0f);
-                lv[(int)label] = 1;
+                Vector labelVector = Vector.Create(10, 0f);
+                labelVector[(int)label] = 1;
 
-                nn.Train(image.ToVector(), lv);
+                nn.Train(new Vector(image.NormalizedPixels), labelVector);
+
+                Vector loss = NNOperations.OutputLoss(nn.Output, labelVector, nn.Properties.LossFunction);
+                float avgLoss = 0;
+                loss.ForEach(v => avgLoss += v);
+                avgLoss /= loss.Length;
+
+                Console.WriteLine(loss.ToString("Loss (Index: " + i + ") (avg: " + avgLoss + ")"));
             }
+            t.Stop();
+            Console.WriteLine("Training time: " + t.ElapsedMilliseconds + "ms");
+            Console.ReadKey();
+        }
 
-            for (int i = 10; i < 10; i++)
+        void Test()
+        {
+            Stopwatch t = new Stopwatch();
+            t.Start();
+
+            for (int i = 0; i < testingSet.Size; i++)
             {
-                Image image = dataset.Data[i];
-                uint label = dataset.Labels[i];
+                Image image = trainingSet.Data[i];
+                uint label = trainingSet.Labels[i];
 
-                nn.Input.Nodes = image.ToVector();
+                Vector labelVector = Vector.Create(10, 0f);
+                labelVector[(int)label] = 1;
+
+                nn.Input.Nodes = new Vector(image.NormalizedPixels);
                 nn.FeedForward();
-                Console.WriteLine(nn.Output.Nodes.ToString("Output"));
-                Console.WriteLine("Correct: " + label);
+
+                Vector loss = NNOperations.OutputLoss(nn.Output, labelVector, nn.Properties.LossFunction);
+                float avgLoss = 0;
+                loss.ForEach(v => avgLoss += v);
+                avgLoss /= loss.Length;
+
+                Console.WriteLine(nn.Output.Nodes.ToString("Output (Index: " + i + ") (avg: " + avgLoss + ")"));
             }
+
+            t.Stop();
+            Console.WriteLine("Testing time: " + t.ElapsedMilliseconds + "ms");
+        }
+
+        public void Run()
+        {
+            Init();
+            Train();
+            Test();
         }
     }
 }

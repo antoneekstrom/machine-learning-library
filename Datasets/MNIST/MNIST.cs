@@ -44,17 +44,19 @@ namespace Datasets.MNIST
     {
         public int Width { get; private set; }
         public int Height { get; private set; }
-        public uint[] Pixels { get; private set; }
         public int Size { get { return Pixels.Length; } }
-
-        public Vector ToVector()
+        public uint[] Pixels { get; private set; }
+        public float[] NormalizedPixels
         {
-            float[] values = new float[Size];
-            for (int i = 0; i < Size; i++)
+            get
             {
-                values[i] = Pixels[i];
+                float[] normalized = new float[Size];
+                for (int i = 0; i < Size; i++)
+                {
+                    normalized[i] = Pixels[i] / 255f;
+                }
+                return normalized;
             }
-            return new Vector(values);
         }
 
         public Matrix ToMatrix()

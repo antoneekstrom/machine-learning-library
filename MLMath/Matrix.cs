@@ -207,7 +207,7 @@ namespace MLMath
         /// <returns></returns>
         public static Vector Multiply(Matrix m, Vector v)
         {
-            if (m.Columns != v.Size) throw new ArgumentException("Matrix columns must match size of vector.");
+            if (m.Columns != v.Length) throw new ArgumentException("Matrix columns must match size of vector.");
             Matrix vtm = Vector.ToMatrix(v);
             Matrix r = m * vtm;
             return new Vector(Transpose(r).Values[0]);
