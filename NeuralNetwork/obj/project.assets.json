@@ -211,6 +211,9 @@
       "Datasets/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "MLMath": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Datasets.dll": {}
         },
@@ -718,23 +721,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anton\\.nuget\\packages\\": {},
+    "C:\\Users\\01aner98\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
+      "projectUniqueName": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
       "projectName": "NeuralNetwork",
-      "projectPath": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
-      "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-      "outputPath": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\obj\\",
+      "projectPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
+      "packagesPath": "C:\\Users\\01aner98\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\NeuralNetwork\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\01aner98\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -747,11 +750,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "E:\\Files\\c\\machine-learning-library\\Datasets\\Datasets.csproj": {
-              "projectPath": "E:\\Files\\c\\machine-learning-library\\Datasets\\Datasets.csproj"
+            "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Datasets\\Datasets.csproj": {
+              "projectPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\Datasets\\Datasets.csproj"
             },
-            "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj": {
-              "projectPath": "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj"
+            "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\MLMath\\MLMath.csproj": {
+              "projectPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\MLMath\\MLMath.csproj"
             }
           }
         }
@@ -773,16 +776,10 @@
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }
