@@ -4,7 +4,7 @@ using System.Text;
 
 using MLMath;
 
-namespace NeuralNetwork
+namespace MachineLearning
 {
     public class Layer
     {

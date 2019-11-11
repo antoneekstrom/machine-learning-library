@@ -727,9 +727,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
-      "projectName": "NeuralNetwork",
-      "projectPath": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
+      "projectUniqueName": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\MachineLearning.csproj",
+      "projectName": "MachineLearning",
+      "projectPath": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\MachineLearning.csproj",
       "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
       "outputPath": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\obj\\",
       "projectStyle": "PackageReference",

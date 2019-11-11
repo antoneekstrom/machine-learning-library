@@ -4,8 +4,10 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <ApplicationIcon />
-    <StartupObject />
+    <StartupObject>MachineLearning.Programs.MainExecutable</StartupObject>
     <NoWin32Manifest>true</NoWin32Manifest>
+    <AssemblyName>MachineLearning</AssemblyName>
+    <RootNamespace>MachineLearning</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

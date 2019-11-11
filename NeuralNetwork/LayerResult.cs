@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿using System.Text;
 using MLMath;
 
-namespace NeuralNetwork.Structure
+namespace MachineLearning
 {
     /// <summary>
     /// A result from <see cref="NeuralNetwork.CalculateLoss(Vector)"/>.

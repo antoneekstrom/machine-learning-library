@@ -4,8 +4,11 @@ using System.Text;
 
 using MLMath;
 
-namespace NeuralNetwork.Collections
+namespace MachineLearning.Collections
 {
+    /// <summary>
+    /// Training data accompanied by a lable.
+    /// </summary>
     public struct TrainingPair
     {
 

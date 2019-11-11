@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using MLMath;
-using NeuralNetwork.Structure;
+﻿using MLMath;
 
-namespace NeuralNetwork
+namespace MachineLearning
 {
 
     /// <summary>

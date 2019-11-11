@@ -5,13 +5,14 @@ using System.Diagnostics;
 using Datasets.MNIST;
 using MLMath;
 
-namespace NeuralNetwork.Programs
+namespace MachineLearning.Programs
 {
     public class DigitRecognition
     {
 
-        MnistDataset trainingSet, testingSet;
-        NeuralNetwork nn;
+        public MnistDataset TrainingSet { get; private set; }
+        public MnistDataset TestingSet { get; private set; }
+        public NeuralNetwork Network { get; private set; }
 
         void Init()
         {
@@ -21,13 +22,13 @@ namespace NeuralNetwork.Programs
             string testingImages = "mnist/t10k-images.idx3-ubyte";
             string testingLabels = "mnist/t10k-labels.idx1-ubyte";
 
-            trainingSet = MnistReader.LoadDataset(trainingImages, trainingLabels);
-            testingSet = MnistReader.LoadDataset(testingImages, testingLabels);
+            TrainingSet = MnistReader.LoadDataset(trainingImages, trainingLabels);
+            TestingSet = MnistReader.LoadDataset(testingImages, testingLabels);
 
-            Image imgSpecimen = trainingSet.Data[0];
+            Image imgSpecimen = TrainingSet.Data[0];
             int inputSize = imgSpecimen.Size;
 
-            nn = new NeuralNetwork(
+            Network = new NeuralNetwork(
                 NetworkProperties.Default,
                 inputSize,
                 25,
@@ -35,7 +36,7 @@ namespace NeuralNetwork.Programs
                 10
             );
 
-            nn.Initialize();
+            Network.Initialize();
         }
 
         void Train()
@@ -43,17 +44,17 @@ namespace NeuralNetwork.Programs
             Stopwatch t = new Stopwatch();
             t.Start();
 
-            for (int i = 0; i < trainingSet.Size; i++)
+            for (int i = 0; i < TrainingSet.Size; i++)
             {
-                Image image = trainingSet.Data[i];
-                uint label = trainingSet.Labels[i];
+                Image image = TrainingSet.Data[i];
+                uint label = TrainingSet.Labels[i];
 
                 Vector labelVector = Vector.Create(10, 0f);
                 labelVector[(int)label] = 1;
 
-                nn.Train(new Vector(image.NormalizedPixels), labelVector);
+                Network.Train(new Vector(image.NormalizedPixels), labelVector);
 
-                Vector loss = NNOperations.OutputLoss(nn.Output, labelVector, nn.Properties.LossFunction);
+                Vector loss = NNOperations.OutputLoss(Network.Output, labelVector, Network.Properties.LossFunction);
                 float avgLoss = 0;
                 loss.ForEach(v => avgLoss += v);
                 avgLoss /= loss.Length;
@@ -70,23 +71,23 @@ namespace NeuralNetwork.Programs
             Stopwatch t = new Stopwatch();
             t.Start();
 
-            for (int i = 0; i < testingSet.Size; i++)
+            for (int i = 0; i < TestingSet.Size; i++)
             {
-                Image image = trainingSet.Data[i];
-                uint label = trainingSet.Labels[i];
+                Image image = TrainingSet.Data[i];
+                uint label = TrainingSet.Labels[i];
 
                 Vector labelVector = Vector.Create(10, 0f);
                 labelVector[(int)label] = 1;
 
-                nn.Input.Nodes = new Vector(image.NormalizedPixels);
-                nn.FeedForward();
+                Network.Input.Nodes = new Vector(image.NormalizedPixels);
+                Network.FeedForward();
 
-                Vector loss = NNOperations.OutputLoss(nn.Output, labelVector, nn.Properties.LossFunction);
+                Vector loss = NNOperations.OutputLoss(Network.Output, labelVector, Network.Properties.LossFunction);
                 float avgLoss = 0;
                 loss.ForEach(v => avgLoss += v);
                 avgLoss /= loss.Length;
 
-                Console.WriteLine(nn.Output.Nodes.ToString("Output (Index: " + i + ") (avg: " + avgLoss + ")"));
+                Console.WriteLine(Network.Output.Nodes.ToString("Output (Index: " + i + ") (avg: " + avgLoss + ")"));
             }
 
             t.Stop();

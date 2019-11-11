@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 using System.Diagnostics;
 
 using MLMath;
-using NeuralNetwork.Collections;
+using MachineLearning.Collections;
 
-namespace NeuralNetwork.Programs
+namespace MachineLearning.Programs
 {
     public class XOR
     {
+        public NeuralNetwork Network { get; private set; }
+
         public void Run()
         {
-            NeuralNetwork nn = new NeuralNetwork(NetworkProperties.Default, 2, 3, 1);
-            nn.Initialize();
+            Network = new NeuralNetwork(NetworkProperties.Default, 2, 3, 1);
+            Network.Initialize();
 
             Console.WriteLine("Enter number of training iterations:");
             int trainingIterations = int.Parse(Console.ReadLine());
@@ -33,11 +32,11 @@ namespace NeuralNetwork.Programs
             {
                 Random r = new Random();
                 TrainingPair set = trainingSet[r.Next(0, trainingSet.Length)];
-                nn.Train(set.Input, set.Output);
+                Network.Train(set.Input, set.Output);
 
                 Console.WriteLine();
-                nn.Input.Nodes.Print("Input");
-                nn.Output.Nodes.Print("Output");
+                Network.Input.Nodes.Print("Input");
+                Network.Output.Nodes.Print("Output");
             }
 
             long dt = time.ElapsedMilliseconds;
@@ -59,10 +58,10 @@ namespace NeuralNetwork.Programs
 
                 input.Print("Input Vector");
 
-                nn.Input.Nodes = input;
+                Network.Input.Nodes = input;
 
-                nn.FeedForward();
-                nn.Output.Nodes.Print("Results");
+                Network.FeedForward();
+                Network.Output.Nodes.Print("Results");
 
                 Console.WriteLine("Exit? (y/n)");
                 if (Console.ReadLine() == "y") break;

@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj": {}
+    "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\MachineLearning.csproj": {}
   },
   "projects": {
     "E:\\Files\\c\\machine-learning-library\\Datasets\\Datasets.csproj": {
@@ -124,12 +124,12 @@
         }
       }
     },
-    "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj": {
+    "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\MachineLearning.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
+        "projectUniqueName": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\MachineLearning.csproj",
         "projectName": "MachineLearning",
-        "projectPath": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\NeuralNetwork.csproj",
+        "projectPath": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\MachineLearning.csproj",
         "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
         "outputPath": "E:\\Files\\c\\machine-learning-library\\NeuralNetwork\\obj\\",
         "projectStyle": "PackageReference",
