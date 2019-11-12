@@ -31,8 +31,8 @@ namespace MachineLearning.Programs
             Network = new NeuralNetwork(
                 NetworkProperties.Default,
                 inputSize,
-                25,
-                25,
+                16,
+                16,
                 10
             );
 
@@ -44,7 +44,7 @@ namespace MachineLearning.Programs
             Stopwatch t = new Stopwatch();
             t.Start();
 
-            for (int i = 0; i < TrainingSet.Size; i++)
+            for (int i = 0; i < TrainingSet.Size / 2; i++)
             {
                 Image image = TrainingSet.Data[i];
                 uint label = TrainingSet.Labels[i];

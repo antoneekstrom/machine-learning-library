@@ -27,7 +27,7 @@ namespace MachineLearning
         public override float LossFunction(float result, float desired)
         {
             float loss = desired - result;
-            return loss; // YEEEEET this should PERHAPS be SQUARED????
+            return loss; // YEEEEET this should PERHAPS be SQUARED (but it does not work that way) ????
         }
 
         public override float LearningRate { get; set; }

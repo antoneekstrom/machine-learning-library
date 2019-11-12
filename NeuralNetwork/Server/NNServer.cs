@@ -2,9 +2,10 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.IO;
 
 using System.Net;
+
+using MLMath;
 
 namespace MachineLearning.Server
 {
@@ -112,20 +113,31 @@ namespace MachineLearning.Server
 
             paths.Add(new Path(CreateUri("/nn/set/"), (Path path, NNServer server, NameValueCollection queries) =>
             {
+                int index = int.Parse(queries.Get("index"));
 
-                return new Response("set");
+                string vstring = queries.Get("vector");
+                string[] values = vstring.Split(",");
+                Vector v = new Vector(values.Length);
+                for (int i = 0; i < values.Length; i++)
+                {
+                    v.Values[i] = float.Parse(values[i]);
+                }
+
+                server.Network.AllLayers[index].Nodes = v;
+
+                return new Response(v.ToString());
             }));
 
             paths.Add(new Path(CreateUri("/nn/feedforward/"), (Path path, NNServer server, NameValueCollection queries) =>
             {
-
-                return new Response("feedforward");
+                NeuralNetwork nn = server.Network;
+                nn.FeedForward();
+                return new Response(nn.Output.Nodes.ToString());
             }));
 
             paths.Add(new Path(CreateUri("/nn/train/"), (Path path, NNServer server, NameValueCollection queries) =>
             {
-
-                return new Response("train");
+                return new Response("yeeet");
             }));
 
             paths.Add(new Path(CreateUri("/nn/stop/"), (Path path, NNServer server, NameValueCollection queries) =>

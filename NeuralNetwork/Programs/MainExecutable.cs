@@ -1,4 +1,8 @@
-﻿using MachineLearning.Server;
+﻿using System;
+using System.Threading;
+
+using MachineLearning.Server;
+using MLMath;
 
 namespace MachineLearning.Programs
 {
@@ -10,7 +14,6 @@ namespace MachineLearning.Programs
             program.Run();
 
             NNServer nns = new NNServer(program.Network, 8080);
-            nns.Start();
         }
     }
 }
