@@ -146,6 +146,13 @@ namespace MachineLearning.Server
                 return new Response("stopping..");
             }));
 
+            paths.Add(new Path(CreateUri("/nn/mutate/"), (Path path, NNServer server, NameValueCollection queries) =>
+            {
+                float rate = float.Parse(queries.Get("rate"));
+                Evolution.Mutation.MutateNetwork(server.Network, Evolution.Mutation.DefaultMutator, rate);
+                return new Response("YEEEET");
+            }));
+
             foreach (Path path in paths)
             {
                 listener.Prefixes.Add(path.uri.AbsoluteUri);
