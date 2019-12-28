@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading;
 
-using MachineLearning.Server;
+using MachineLearning.IO;
 using MLMath;
+using System.IO;
 
 namespace MachineLearning.Programs
 {
@@ -10,10 +11,23 @@ namespace MachineLearning.Programs
     {
         public static void Main(string[] args)
         {
-            XOR program = new XOR();
-            program.Run();
+            Serializer serializer = new Serializer();
 
-            NNServer nns = new NNServer(program.Network, 8080);
+            NeuralNetwork nn = DeserializeNetwork(serializer);
+
+            serializer.Close();
+        }
+
+        public static NeuralNetwork DeserializeNetwork(Serializer serializer)
+        {
+            return serializer.Deserialize(serializer.ReadFile("neuralnetwork.json"));
+        }
+
+        public static void SerializeNetwork(Serializer serializer)
+        {
+            XOR xor = new XOR();
+            xor.Run();
+            serializer.WriteFile(serializer.Serialize(xor.Network), "neuralnetwork.json");
         }
     }
 }

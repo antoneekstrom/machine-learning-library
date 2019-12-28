@@ -11,6 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Datasets\Datasets.csproj" />
     <ProjectReference Include="..\MLMath\MLMath.csproj" />
   </ItemGroup>

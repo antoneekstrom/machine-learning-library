@@ -47,6 +47,7 @@ namespace MachineLearning
         /// <summary>
         /// 
         /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
         public Layer[] AllLayers
         {
             get
@@ -65,6 +66,7 @@ namespace MachineLearning
         /// <summary>
         /// The total number of layers in the nn, INCLUDING the input layer
         /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
         public int LayerCount { get { return Hidden.Length + 2; } }
 
         /// <summary>
@@ -101,6 +103,9 @@ namespace MachineLearning
                 Hidden[i - 1] = new Layer(architecture[i]);
             }
         }
+
+        [Newtonsoft.Json.JsonConstructor]
+        private NeuralNetwork() { }
 
         /// <summary>
         /// Calculate the results by feeding the input layer forward through the network. The resulting values can end up in the <see cref="Output"/> layer.
