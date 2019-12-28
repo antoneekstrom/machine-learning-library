@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj": {}
+    "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\MLMath\\MLMath.csproj": {}
   },
   "projects": {
-    "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj": {
+    "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\MLMath\\MLMath.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj",
+        "projectUniqueName": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\MLMath\\MLMath.csproj",
         "projectName": "MLMath",
-        "projectPath": "E:\\Files\\c\\machine-learning-library\\MLMath\\MLMath.csproj",
-        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "E:\\Files\\c\\machine-learning-library\\MLMath\\obj\\",
+        "projectPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\MLMath\\MLMath.csproj",
+        "packagesPath": "C:\\Users\\01aner98\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\01aner98\\Documents\\c projects\\machine-learning-library\\MLMath\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\01aner98\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,16 +49,10 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     }
